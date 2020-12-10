@@ -38,8 +38,8 @@ public class AsIntStream implements IntStream {
         max = iterator.next();
         while (iterator.hasNext()) {
             value = iterator.next();
-            if ((value != null) &&
-                    (value * multiplyValue > max * multiplyValue)) {
+            if ((value != null)
+                    && (value * multiplyValue > max * multiplyValue)) {
                 max = value;
             }
         }
@@ -139,14 +139,15 @@ public class AsIntStream implements IntStream {
     public int reduce(int identity, IntBinaryOperator op) {
         checkIfNotEmpty();
         Integer value;
+        int result = identity;
 
         while (iterator.hasNext()) {
             value = iterator.next();
             if (value != null) {
-                identity = op.apply(identity, value);
+                result = op.apply(result, value);
             }
         }
-        return identity;
+        return result;
     }
 
     @Override

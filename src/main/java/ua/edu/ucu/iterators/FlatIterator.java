@@ -9,7 +9,8 @@ public class FlatIterator implements Iterator<Integer> {
     private Iterator<Integer> tmpIterator;
     private IntToIntStreamFunction func;
 
-    public FlatIterator(Iterator<Integer> iterator, IntToIntStreamFunction func) {
+    public FlatIterator(Iterator<Integer> iterator,
+                        IntToIntStreamFunction func) {
         this.iterator = iterator;
         this.func = func;
     }

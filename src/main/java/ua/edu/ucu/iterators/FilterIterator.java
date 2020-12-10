@@ -23,8 +23,8 @@ public class FilterIterator implements Iterator<Integer> {
         int next = iterator.next();
         Integer tmpNext = null;
 
-        while (iterator.hasNext() &&
-                !predicate.test(next)) {
+        while (iterator.hasNext()
+                && !predicate.test(next)) {
             next = iterator.next();
         }
         if (predicate.test(next)) {
