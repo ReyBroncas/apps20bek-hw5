@@ -14,6 +14,7 @@ public class BaseIterator implements Iterator<Integer> {
 
         System.arraycopy(values, 0, arr, 0, length);
     }
+
     @Override
     public boolean hasNext() {
         return index < length - 1;
